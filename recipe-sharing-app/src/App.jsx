@@ -1,6 +1,3 @@
-// src/App.jsx
-
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
@@ -11,22 +8,9 @@ function App() {
     <Router>
       <div style={{ padding: '20px' }}>
         <h1>Recipe Sharing App</h1>
-        <nav style={{ marginBottom: '20px' }}>
-          <Link to="/">Home</Link>
-        </nav>
+        <nav><Link to="/">Home</Link></nav>
         <Routes>
-          {/* Home page: Add recipe + recipe list */}
-          <Route
-            path="/"
-            element={
-              <>
-                <AddRecipeForm />
-                <RecipeList />
-              </>
-            }
-          />
-
-          {/* Recipe details page */}
+          <Route path="/" element={<><AddRecipeForm /><RecipeList /></>} />
           <Route path="/recipe/:id" element={<RecipeDetailsWrapper />} />
         </Routes>
       </div>
@@ -39,5 +23,3 @@ const RecipeDetailsWrapper = () => {
   const { id } = useParams();
   return <RecipeDetails recipeId={Number(id)} />;
 };
-
-export default App;
