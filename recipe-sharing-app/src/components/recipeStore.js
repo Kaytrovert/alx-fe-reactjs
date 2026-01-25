@@ -3,7 +3,6 @@
 import { create } from 'zustand';
 
 export const useRecipeStore = create((set) => ({
-  // Initial recipes array
   recipes: [],
 
   // Add a new recipe
