@@ -6,8 +6,8 @@ const EditRecipeForm = ({ recipe }) => {
   const [title, setTitle] = useState(recipe.title);
   const [description, setDescription] = useState(recipe.description);
 
-  const handleSubmit = (event) => {   // must use 'event' here
-    event.preventDefault();           // checker expects this line
+  const handleSubmit = (event) => {
+    event.preventDefault();
     updateRecipe(recipe.id, { title, description });
   };
 

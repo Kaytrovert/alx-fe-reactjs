@@ -1,13 +1,13 @@
-import { useRecipeStore } from './recipeStore';
 import EditRecipeForm from './EditRecipeForm';
 import DeleteRecipeButton from './DeleteRecipeButton';
+import { useRecipeStore } from './recipeStore';
 
 const RecipeDetails = ({ recipeId }) => {
   const recipe = useRecipeStore((state) =>
-    state.recipes.find((recipe) => recipe.id === recipeId)
+    state.recipes.find((r) => r.id === recipeId)
   );
 
-  if (!recipe) return <p>Recipe not found!</p>;
+  if (!recipe) return <p>Recipe not found.</p>;
 
   return (
     <div>
